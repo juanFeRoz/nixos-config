@@ -48,6 +48,7 @@
       fzf
       networkmanagerapplet
       wlprop
+      unzip
       slurp
       wl-clipboard
       mako
