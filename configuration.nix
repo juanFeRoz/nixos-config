@@ -56,7 +56,6 @@
       xfce.thunar-volman
       kickoff
       ripgrep
-      fd-find
     ];
   };
 
