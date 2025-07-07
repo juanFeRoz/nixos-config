@@ -52,9 +52,6 @@
       xdg-user-dirs
       pw-volume
       playerctl
-      xfce.thunar
-      xfce.thunar-volman
-      kickoff
       ripgrep
     ];
   };
@@ -71,7 +68,7 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    extraPackages = with pkgs; [grim swayidle swaylock brightnessctl];
+    extraPackages = with pkgs; [grim swayidle swaylock brightnessctl wmenu ];
   };
 
   services.greetd = {
