@@ -54,7 +54,7 @@
       pw-volume
       playerctl
       ripgrep
-      kitty
+      alacritty
     ];
   };
 
