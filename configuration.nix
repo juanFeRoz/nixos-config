@@ -45,6 +45,7 @@
       waybar
       firefox
       alacritty
+      wlprop
       slurp
       wl-clipboard
       mako
