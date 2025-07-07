@@ -65,8 +65,18 @@
     nerd-fonts.droid-sans-mono
   ];
 
+<<<<<<< HEAD
   programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+=======
+  services.gnome.gnome-keyring.enable = true;
+
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [grim swayidle swaylock brightnessctl wmenu ];
+  };
+>>>>>>> 436fa0d (removed thunar and kickoff, added wmenu instead)
 
   services.greetd = {
     enable = true;
