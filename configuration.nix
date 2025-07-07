@@ -50,6 +50,7 @@
       slurp
       wl-clipboard
       mako
+      tmux
       xdg-user-dirs
       pw-volume
       playerctl
