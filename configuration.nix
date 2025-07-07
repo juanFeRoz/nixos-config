@@ -45,6 +45,7 @@
       waybar
       firefox
       pwvucontrol
+      fzf
       networkmanagerapplet
       wlprop
       slurp
