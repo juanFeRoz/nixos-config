@@ -39,7 +39,6 @@ pkgs,
         extraGroups = ["wheel"];
         packages = with pkgs; [
             git
-            alejandra
             adwaita-icon-theme
             glib
             waybar
@@ -63,7 +62,6 @@ pkgs,
             alacritty
             kitty
             direnv
-            racket
         ];
     };
 
