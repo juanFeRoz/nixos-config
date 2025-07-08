@@ -1,9 +1,9 @@
 {
-    config,
-    lib,
-    pkgs,
-    ...
-    }: {
+config,
+lib,
+pkgs,
+...
+}: {
     imports = [
         ./hardware-configuration.nix
     ];
@@ -73,41 +73,42 @@
             enable = true;
             package = pkgs.nix-direnv;
         };
+    };
 
-        fonts.enableDefaultPackages = true;
+    fonts.enableDefaultPackages = true;
 
-        programs.thunar.enable = true;
-        programs.thunar.plugins = with pkgs.xfce; [
-            thunar-archive-plugin
-            thunar-volman
-        ];
-        services.gvfs.enable = true; # Mount, trash, and other functionalities
+    programs.thunar.enable = true;
+    programs.thunar.plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+    ];
+    services.gvfs.enable = true; # Mount, trash, and other functionalities
 
-        fonts.packages = with pkgs; [
-            nerd-fonts.fira-code
-            nerd-fonts.droid-sans-mono
-        ];
+    fonts.packages = with pkgs; [
+        nerd-fonts.fira-code
+        nerd-fonts.droid-sans-mono
+    ];
 
-        services.gnome.gnome-keyring.enable = true;
+    services.gnome.gnome-keyring.enable = true;
 
-        programs.sway = {
-            enable = true;
-            wrapperFeatures.gtk = true;
-            extraPackages = with pkgs; [grim swayidle swaylock brightnessctl wmenu ];
-        };
+    programs.sway = {
+        enable = true;
+        wrapperFeatures.gtk = true;
+        extraPackages = with pkgs; [grim swayidle swaylock brightnessctl wmenu ];
+    };
 
-        services.greetd = {
-            enable = true;
-            settings = {
-                default_session = {
-                    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-                };
+    services.greetd = {
+        enable = true;
+        settings = {
+            default_session = {
+                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
             };
         };
+    };
 
-        environment.systemPackages = with pkgs; [
-            neovim
-        ];
+    environment.systemPackages = with pkgs; [
+        neovim
+    ];
 
-        system.stateVersion = "25.05";
-    }
+    system.stateVersion = "25.05";
+}
