@@ -1,9 +1,9 @@
 {
-config,
-lib,
-pkgs,
-...
-}: {
+    config,
+    lib,
+    pkgs,
+    ...
+    }: {
     imports = [
         ./hardware-configuration.nix
     ];
@@ -61,44 +61,53 @@ pkgs,
             ripgrep
             alacritty
             kitty
-            direnv
         ];
     };
 
-    fonts.enableDefaultPackages = true;
+    programs.direnv = {
+        package = pkgs.direnv;
+        silent = false;
+        loadInNixShell = true;
+        direnvrcExtra = "";
+        nix-direnv = {
+            enable = true;
+            package = pkgs.nix-direnv;
+        };
 
-    programs.thunar.enable = true;
-    programs.thunar.plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-    ];
-    services.gvfs.enable = true; # Mount, trash, and other functionalities
+        fonts.enableDefaultPackages = true;
 
-    fonts.packages = with pkgs; [
-        nerd-fonts.fira-code
-        nerd-fonts.droid-sans-mono
-    ];
+        programs.thunar.enable = true;
+        programs.thunar.plugins = with pkgs.xfce; [
+            thunar-archive-plugin
+            thunar-volman
+        ];
+        services.gvfs.enable = true; # Mount, trash, and other functionalities
 
-    services.gnome.gnome-keyring.enable = true;
+        fonts.packages = with pkgs; [
+            nerd-fonts.fira-code
+            nerd-fonts.droid-sans-mono
+        ];
 
-    programs.sway = {
-        enable = true;
-        wrapperFeatures.gtk = true;
-        extraPackages = with pkgs; [grim swayidle swaylock brightnessctl wmenu ];
-    };
+        services.gnome.gnome-keyring.enable = true;
 
-    services.greetd = {
-        enable = true;
-        settings = {
-            default_session = {
-                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        programs.sway = {
+            enable = true;
+            wrapperFeatures.gtk = true;
+            extraPackages = with pkgs; [grim swayidle swaylock brightnessctl wmenu ];
+        };
+
+        services.greetd = {
+            enable = true;
+            settings = {
+                default_session = {
+                    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+                };
             };
         };
-    };
 
-    environment.systemPackages = with pkgs; [
-        neovim
-    ];
+        environment.systemPackages = with pkgs; [
+            neovim
+        ];
 
-    system.stateVersion = "25.05";
-}
+        system.stateVersion = "25.05";
+    }
