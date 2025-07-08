@@ -45,6 +45,7 @@
       waybar
       firefox
       pwvucontrol
+      tree-sitter
       fzf
       networkmanagerapplet
       wlprop
