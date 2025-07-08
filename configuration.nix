@@ -45,6 +45,7 @@ pkgs,
             waybar
             firefox
             pwvucontrol
+            lua-language-server
             gccgo15
             tree-sitter
             fzf
