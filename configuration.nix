@@ -45,6 +45,7 @@
       waybar
       firefox
       pwvucontrol
+      gccgo15
       tree-sitter
       fzf
       networkmanagerapplet
@@ -63,6 +64,13 @@
   };
 
   fonts.enableDefaultPackages = true;
+
+  programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+  ];
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
 
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
