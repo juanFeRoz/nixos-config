@@ -45,7 +45,6 @@
       waybar
       firefox
       pwvucontrol
-      libgccjit
       tree-sitter
       fzf
       networkmanagerapplet
