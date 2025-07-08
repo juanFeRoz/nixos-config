@@ -63,6 +63,7 @@ pkgs,
             alacritty
             kitty
             direnv
+            racket
         ];
     };
 
