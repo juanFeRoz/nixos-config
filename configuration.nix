@@ -45,6 +45,7 @@ pkgs,
             firefox
             pwvucontrol
             lua-language-server
+            file-roller
             gccgo15
             tree-sitter
             fzf
