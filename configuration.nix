@@ -58,7 +58,6 @@ pkgs,
             mako
             tmux
             xdg-user-dirs
-            pactl
             playerctl
             ripgrep
             alacritty
