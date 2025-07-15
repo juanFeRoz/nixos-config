@@ -68,6 +68,8 @@ pkgs,
 
     fonts.enableDefaultPackages = true;
 
+    services.flatpak.enable = true;
+
     programs.thunar.enable = true;
     programs.thunar.plugins = with pkgs.xfce; [
         thunar-archive-plugin
