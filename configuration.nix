@@ -45,6 +45,7 @@ pkgs,
             firefox
             pwvucontrol
             lua-language-server
+            zathura
             file-roller
             gccgo15
             tree-sitter
@@ -57,7 +58,7 @@ pkgs,
             mako
             tmux
             xdg-user-dirs
-            pw-volume
+            pactl
             playerctl
             ripgrep
             alacritty
