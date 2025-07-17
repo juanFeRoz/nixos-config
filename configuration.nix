@@ -79,6 +79,16 @@ pkgs,
     ];
     services.gvfs.enable = true; # Mount, trash, and other functionalities
 
+    hardware.bluetooth.enable = true; # enables support for Bluetooth
+    hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    services.blueman.enable = true;
+
+    hardware.bluetooth.settings = {
+        General = {
+            Experimental = true;
+        };
+    };
+
     fonts.packages = with pkgs; [
         nerd-fonts.fira-code
         nerd-fonts.droid-sans-mono
