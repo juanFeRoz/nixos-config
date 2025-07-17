@@ -45,6 +45,8 @@ pkgs,
             firefox
             pwvucontrol
             lua-language-server
+            joycond
+            joycond-cemuhook
             zathura
             file-roller
             gccgo15
