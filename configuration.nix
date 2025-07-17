@@ -45,6 +45,7 @@ pkgs,
             firefox
             pwvucontrol
             lua-language-server
+            nwg-look
             joycond
             joycond-cemuhook
             zathura
