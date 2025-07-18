@@ -70,6 +70,8 @@ pkgs,
         ];
     };
 
+    nixpkgs.config.allowUnfree = true;
+
     fonts.enableDefaultPackages = true;
 
     services.flatpak.enable = true;
