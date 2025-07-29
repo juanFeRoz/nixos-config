@@ -45,6 +45,7 @@ pkgs,
             firefox
             pwvucontrol
             lua-language-server
+            dropbox
             obsidian
             nwg-look
             joycond-cemuhook
