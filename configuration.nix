@@ -45,6 +45,7 @@ pkgs,
             firefox
             pwvucontrol
             lua-language-server
+            obsidian
             nwg-look
             joycond-cemuhook
             zathura
@@ -62,7 +63,6 @@ pkgs,
             xdg-user-dirs
             playerctl
             ripgrep
-            alacritty
             kitty
             direnv
         ];
