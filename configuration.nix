@@ -46,7 +46,6 @@ pkgs,
             pwvucontrol
             lua-language-server
             dropbox
-            vscode-extensions.ms-vscode.cpptools
             obsidian
             nwg-look
             joycond-cemuhook
