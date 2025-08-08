@@ -24,20 +24,6 @@ pkgs,
 
     networking.hostName = "nixos";
     networking.networkmanager.enable = true;
-    networking.wireless.iwd.enable = true;
-    networking.networkmanager.wifi.backend = "iwd";
-
-    networking.wireless.iwd.settings = {
-        Security = {
-            EAP-Method="PEAP";
-            EAP-PEAP-Phase2-Identity=2220070;
-            EAP-PEAP-Phase2-Password=BZUePeJTCF3;
-            EAP-PEAP-Phase2-Method="MSCHAPV2";
-        };
-        Settings = {
-            AutoConnect = true;
-        };
-    };
 
     time.timeZone = "America/Bogota";
 
