@@ -36,7 +36,7 @@ pkgs,
 
     users.users.juanfe = {
         isNormalUser = true;
-        extraGroups = ["wheel"];
+        extraGroups = ["wheel" "networkmanager"];
         packages = with pkgs; [
             git
             adwaita-icon-theme
