@@ -55,6 +55,7 @@ pkgs,
             tree-sitter
             fzf
             networkmanagerapplet
+            wpa_supplicant
             wlprop
             unzip
             slurp
