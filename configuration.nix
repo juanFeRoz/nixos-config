@@ -23,9 +23,13 @@ pkgs,
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
     networking.hostName = "nixos";
-    networking.networkmanager.enable = true;
+
+    networking.networkmanager.enable = false;
+
     networking.wireless.iwd.enable = true;
-    networking.networkmanager.wifi.backend = "iwd";
+
+    services.resolved.enable = true;
+
 
     time.timeZone = "America/Bogota";
 
