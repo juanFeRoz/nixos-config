@@ -42,7 +42,7 @@ pkgs,
             "udev.log_priority=3"
             "rd.systemd.show_status=auto"
         ];
-    }
+    };
 
     time.timeZone = "America/Bogota";
 
