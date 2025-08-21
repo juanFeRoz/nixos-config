@@ -20,7 +20,10 @@ pkgs,
 
     boot.loader.systemd-boot.enable = true;
 
+    boot.loader.systemd-boot.consoleMode = "max";
+
     boot.kernelPackages = pkgs.linuxPackages_latest;
+
     hardware.enableRedistributableFirmware = true;
 
     networking.hostName = "nixos";
@@ -53,6 +56,16 @@ pkgs,
         enable = true;
         pulse.enable = true;
     };
+
+    hardware.pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
+
+    boot.extraModprobeConfig = ''
+    options bluetooth disable_ertm=1
+    '';
+
+    services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="on"
+    '';
 
     users.users.juanfe = {
         isNormalUser = true;
