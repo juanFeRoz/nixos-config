@@ -57,8 +57,6 @@ pkgs,
         pulse.enable = true;
     };
 
-    hardware.pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
-
     boot.extraModprobeConfig = ''
     options bluetooth disable_ertm=1
     '';
