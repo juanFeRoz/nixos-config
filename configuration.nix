@@ -32,6 +32,15 @@ pkgs,
 
     networking.wireless.iwd.enable = true;
 
+    networking.wireless.iwd.settings = {
+        General = {
+            EnableNetworkConfiguration = true;
+        };
+        Roaming = {
+            RoamThreshold = 15;
+        };
+    };
+
     services.resolved.enable = true;
 
     boot.plymouth.enable = true; 
@@ -160,14 +169,22 @@ pkgs,
         extraPackages = with pkgs; [grim swayidle swaylock brightnessctl wmenu ];
     };
 
-    services.greetd = {
-        enable = true;
-        settings = {
-            default_session = {
-                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-            };
-        };
+    # services.greetd = {
+    #     enable = true;
+    #     settings = {
+    #         default_session = {
+    #             command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+    #         };
+    #     };
+    # };
+
+    services.getty = {
+        autologinUser = "juanfe";
+        autologinOnce = true;
     };
+    environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && sway
+    '';
 
     environment.systemPackages = with pkgs; [
         neovim
