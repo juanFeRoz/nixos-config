@@ -169,22 +169,22 @@ pkgs,
         extraPackages = with pkgs; [grim swayidle swaylock brightnessctl wmenu ];
     };
 
-    # services.greetd = {
-    #     enable = true;
-    #     settings = {
-    #         default_session = {
-    #             command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-    #         };
-    #     };
-    # };
-
-    services.getty = {
-        autologinUser = "juanfe";
-        autologinOnce = true;
+    services.greetd = {
+        enable = true;
+        settings = {
+            default_session = {
+                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+            };
+        };
     };
-    environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway
-    '';
+
+    # services.getty = {
+    #     autologinUser = "juanfe";
+    #     autologinOnce = true;
+    # };
+    # environment.loginShellInit = ''
+    # [[ "$(tty)" == /dev/tty1 ]] && sway
+    # '';
 
     environment.systemPackages = with pkgs; [
         neovim
