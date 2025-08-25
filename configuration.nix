@@ -15,23 +15,17 @@ pkgs,
         dates = "weekly";
         options = "--delete-older-than 1w";
     };
-
     nix.settings.auto-optimise-store = true;
 
     boot.loader.systemd-boot.enable = true;
-
     boot.loader.systemd-boot.consoleMode = "max";
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    hardware.enableRedistributableFirmware = true;
-
     networking.hostName = "nixos";
-
     networking.networkmanager.enable = false;
 
     networking.wireless.iwd.enable = true;
-
     networking.wireless.iwd.settings = {
         General = {
             EnableNetworkConfiguration = true;
@@ -40,11 +34,9 @@ pkgs,
             RoamThreshold = 15;
         };
     };
-
     services.resolved.enable = true;
 
     boot.plymouth.enable = true; 
-
     boot = {
         consoleLogLevel = 3;
         initrd.verbose = false;
@@ -65,11 +57,9 @@ pkgs,
         enable = true;
         pulse.enable = true;
     };
-
     boot.extraModprobeConfig = ''
     options bluetooth disable_ertm=1
     '';
-
     services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="on"
     '';
@@ -82,20 +72,18 @@ pkgs,
             adwaita-icon-theme
             glib
             waybar
+            tldr
             firefox
             pwvucontrol
             lua-language-server
             dropbox
             obsidian
             nwg-look
-            joycond-cemuhook
             zathura
             file-roller
             gccgo15
             tree-sitter
             fzf
-            networkmanagerapplet
-            wpa_supplicant
             wlprop
             unzip
             slurp
@@ -127,21 +115,6 @@ pkgs,
         remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
         dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
         localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-    };
-
-    powerManagement.powertop.enable = true;
-    services = {
-        power-profiles-daemon.enable = false;
-        tlp = {
-            enable = true;
-            settings = {
-                CPU_BOOST_ON_AC = 1;
-                CPU_BOOST_ON_BAT = 0;
-                CPU_SCALING_GOVERNOR_ON_AC = "performance";
-                CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-                STOP_CHARGE_THRESH_BAT0 = 95;
-            };
-        };
     };
 
     services.gvfs.enable = true; # Mount, trash, and other functionalities
@@ -177,14 +150,6 @@ pkgs,
             };
         };
     };
-
-    # services.getty = {
-    #     autologinUser = "juanfe";
-    #     autologinOnce = true;
-    # };
-    # environment.loginShellInit = ''
-    # [[ "$(tty)" == /dev/tty1 ]] && sway
-    # '';
 
     environment.systemPackages = with pkgs; [
         neovim
