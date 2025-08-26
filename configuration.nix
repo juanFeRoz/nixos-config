@@ -15,6 +15,7 @@ pkgs,
         dates = "weekly";
         options = "--delete-older-than 1w";
     };
+
     nix.settings.auto-optimise-store = true;
 
     boot.loader.systemd-boot.enable = true;
@@ -66,7 +67,7 @@ pkgs,
 
     users.users.juanfe = {
         isNormalUser = true;
-        extraGroups = ["wheel" "networkmanager"];
+        extraGroups = ["wheel"];
         packages = with pkgs; [
             git
             adwaita-icon-theme
