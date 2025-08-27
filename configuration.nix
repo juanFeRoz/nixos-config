@@ -83,6 +83,7 @@ pkgs,
             zathura
             file-roller
             gccgo15
+            rclone
             tree-sitter
             fzf
             wlprop
