@@ -13,14 +13,6 @@ pkgs,
         enable32Bit = true;
     };
 
-    boot.loader.systemd-boot.configurationLimit = 10;
-
-    nix.gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 1w";
-    };
-
     nix.settings.auto-optimise-store = true;
 
     boot.loader.systemd-boot.enable = true;
@@ -40,9 +32,8 @@ pkgs,
             Enable = false;
         };
     };
-    services.resolved.enable = true;
-
     boot.plymouth.enable = true; 
+
     boot = {
         consoleLogLevel = 3;
         initrd.verbose = false;
@@ -64,23 +55,17 @@ pkgs,
         enable = true;
         pulse.enable = true;
     };
-    boot.extraModprobeConfig = ''
-    options bluetooth disable_ertm=1
-    '';
-    services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="on"
-    ACTION=="add", KERNEL=="wlan0", RUN+="${pkgs.iproute2}/sbin/iw dev %k set power_save off"
-    '';
 
     users.users.juanfe = {
         isNormalUser = true;
-        extraGroups = ["wheel" "video" "render"];
+        extraGroups = ["wheel"];
         packages = with pkgs; [
             git
             adwaita-icon-theme
             glib
             waybar
             tldr
+            alejandra
             firefox
             pwvucontrol
             lua-language-server
@@ -109,9 +94,8 @@ pkgs,
 
     fonts.enableDefaultPackages = true;
 
-    services.flatpak.enable = true;
-
     programs.thunar.enable = true;
+
     programs.thunar.plugins = with pkgs.xfce; [
         thunar-archive-plugin
         thunar-volman
