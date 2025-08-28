@@ -13,10 +13,6 @@ pkgs,
         enable32Bit = true;
     };
 
-    boot.initrd.kernelModules = [ "amdgpu" ];
-
-    hardware.enableRedistributableFirmware = true;
-
     boot.loader.systemd-boot.configurationLimit = 10;
 
     nix.gc = {
@@ -92,8 +88,6 @@ pkgs,
             file-roller
             gccgo15
             tree-sitter
-            rocmPackages.rocm-smi
-            rocmPackages.rocminfo
             fzf
             wlprop
             unzip
