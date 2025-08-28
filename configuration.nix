@@ -28,11 +28,6 @@ pkgs,
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    boot.kernelParams = [
-        #... other params
-        "bt_coex=0"
-    ];
-
     networking.hostName = "nixos";
     networking.networkmanager.enable = false;
 
@@ -57,6 +52,7 @@ pkgs,
             "boot.shell_on_fail"
             "udev.log_priority=3"
             "rd.systemd.show_status=auto"
+            "bt_coex=0"
         ];
     };
 
