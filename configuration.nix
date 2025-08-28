@@ -28,6 +28,11 @@ pkgs,
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
+    boot.kernelParams = [
+        #... other params
+        "bt_coex=0"
+    ];
+
     networking.hostName = "nixos";
     networking.networkmanager.enable = false;
 
@@ -37,7 +42,7 @@ pkgs,
             EnableNetworkConfiguration = true;
         };
         Roaming = {
-            RoamThreshold = 15;
+            Enable = false;
         };
     };
     services.resolved.enable = true;
@@ -68,6 +73,7 @@ pkgs,
     '';
     services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="on"
+    ACTION=="add", KERNEL=="wlan0", RUN+="${pkgs.iproute2}/sbin/iw dev %k set power_save off"
     '';
 
     users.users.juanfe = {
