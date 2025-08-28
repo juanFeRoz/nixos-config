@@ -13,6 +13,9 @@ pkgs,
         enable32Bit = true;
     };
 
+    hardware.rocm.enable = true;
+    hardware.enableRedistributableFirmware = true;
+
     boot.loader.systemd-boot.configurationLimit = 10;
 
     nix.gc = {
@@ -72,7 +75,7 @@ pkgs,
 
     users.users.juanfe = {
         isNormalUser = true;
-        extraGroups = ["wheel"];
+        extraGroups = ["wheel" "video" "render"];
         packages = with pkgs; [
             git
             adwaita-icon-theme
