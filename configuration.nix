@@ -8,6 +8,11 @@ pkgs,
         ./hardware-configuration.nix
     ];
 
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+    };
+
     boot.loader.systemd-boot.configurationLimit = 10;
 
     nix.gc = {
