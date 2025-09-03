@@ -21,17 +21,15 @@ pkgs,
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
     networking.hostName = "nixos";
-    networking.networkmanager.enable = false;
+
+    networking.firewall = {
+        enable = true;
+        allowedTCPPorts = [ 5050 ];
+        allowedUDPPorts = [ 5050 ];
+    };
 
     networking.wireless.iwd.enable = true;
-    networking.wireless.iwd.settings = {
-        General = {
-            EnableNetworkConfiguration = true;
-        };
-        Roaming = {
-            Enable = false;
-        };
-    };
+
     boot.plymouth.enable = true; 
 
     boot = {
@@ -64,9 +62,11 @@ pkgs,
             adwaita-icon-theme
             glib
             waybar
+            blesh
             tldr
             alejandra
             firefox
+            networkmanagerapplet
             pwvucontrol
             lua-language-server
             obsidian
