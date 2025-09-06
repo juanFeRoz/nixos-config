@@ -13,6 +13,9 @@ pkgs,
         enable32Bit = true;
     };
 
+    system.autoUpgrade.enable  = true;
+    system.autoUpgrade.allowReboot  = true;
+
     nix.settings.auto-optimise-store = true;
 
     boot.loader.systemd-boot.enable = true;
