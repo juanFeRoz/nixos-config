@@ -83,6 +83,8 @@ pkgs,
             obsidian
             nwg-look
             zathura
+            docker
+            docker-compose
             file-roller
             gccgo15
             tree-sitter
