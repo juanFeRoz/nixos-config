@@ -65,6 +65,14 @@ pkgs,
         pulse.enable = true;
     };
 
+    virtualisation.docker = {
+        enable = false;
+        rootless = {
+            enable = true;
+            setSocketVariable = true;
+        };
+    };
+
     users.users.juanfe = {
         isNormalUser = true;
         extraGroups = ["wheel"];
@@ -83,7 +91,6 @@ pkgs,
             obsidian
             nwg-look
             zathura
-            docker
             docker-compose
             file-roller
             gccgo15
