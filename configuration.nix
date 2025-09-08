@@ -66,16 +66,12 @@ pkgs,
     };
 
     virtualisation.docker = {
-        enable = false;
-        rootless = {
-            enable = true;
-            setSocketVariable = true;
-        };
+        enable = true;
     };
 
     users.users.juanfe = {
         isNormalUser = true;
-        extraGroups = ["wheel"];
+        extraGroups = ["wheel" "docker"];
         packages = with pkgs; [
             git
             adwaita-icon-theme
