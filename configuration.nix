@@ -39,8 +39,6 @@ pkgs,
         };
     };
 
-    networking.networkmanager.wifi.backend = "iwd";
-
     boot.plymouth.enable = true; 
 
     boot = {
