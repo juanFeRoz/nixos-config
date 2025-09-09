@@ -39,8 +39,6 @@ pkgs,
         };
     };
 
-    boot.plymouth.enable = true; 
-
     boot = {
         consoleLogLevel = 3;
         initrd.verbose = false;
