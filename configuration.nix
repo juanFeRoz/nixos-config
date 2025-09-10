@@ -31,15 +31,6 @@ pkgs,
         allowedUDPPorts = [ 5050 ];
     };
 
-    networking = {
-        resolvconf.enable = true;
-        networkmanager = {
-            enable = true;
-            wifi.powersave = false;
-            wifi.backend = "iwd";
-        };
-    };
-
     networking.wireless.iwd.enable = true;
 
     boot = {
