@@ -37,7 +37,7 @@ pkgs,
         settings = {
             # The [Settings] group
             Settings = {
-                RoamThreshold = -75;
+                RoamThreshold = -80;
                 RoamThreshold5G = -80;
             };
         };
