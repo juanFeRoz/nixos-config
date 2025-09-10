@@ -41,7 +41,6 @@ pkgs,
     };
 
     networking.wireless.iwd.enable = true;
-    services.wpa_supplicant.enable = false;
 
     boot = {
         consoleLogLevel = 3;
