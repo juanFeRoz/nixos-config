@@ -83,6 +83,7 @@ pkgs,
             firefox
             networkmanagerapplet
             pwvucontrol
+            impala
             lua-language-server
             obsidian
             nwg-look
