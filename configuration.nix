@@ -33,6 +33,16 @@ pkgs,
 
     networking.wireless.iwd.enable = true;
 
+    networking.wireless.iwd = {
+        settings = {
+            # The [Settings] group
+            Settings = {
+                RoamThreshold = -75;
+                RoamThreshold5G = -80;
+            };
+        };
+    };
+
     boot = {
         consoleLogLevel = 3;
         initrd.verbose = false;
