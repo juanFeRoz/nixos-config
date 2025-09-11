@@ -81,8 +81,8 @@ pkgs,
             tldr
             alejandra
             firefox
-            networkmanagerapplet
             pwvucontrol
+            discord
             impala
             lua-language-server
             obsidian
