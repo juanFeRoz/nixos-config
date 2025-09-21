@@ -83,6 +83,7 @@ pkgs,
             firefox
             pwvucontrol
             discord
+            aria2
             impala
             lua-language-server
             obsidian
