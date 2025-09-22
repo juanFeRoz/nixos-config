@@ -88,7 +88,7 @@ pkgs,
             lua-language-server
             obsidian
             nwg-look
-            zathura
+            apvlv
             docker-compose
             file-roller
             gccgo15
