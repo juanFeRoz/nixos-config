@@ -88,7 +88,6 @@ pkgs,
             lua-language-server
             obsidian
             nwg-look
-            papers
             docker-compose
             file-roller
             gccgo15
