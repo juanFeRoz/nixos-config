@@ -88,7 +88,7 @@ pkgs,
             lua-language-server
             obsidian
             nwg-look
-            fancy-cat
+            tdf
             docker-compose
             file-roller
             gccgo15
