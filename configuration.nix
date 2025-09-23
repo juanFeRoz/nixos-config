@@ -33,6 +33,16 @@ pkgs,
 
     networking.wireless.iwd.enable = true;
 
+    networking.wireless.iwd = {
+        settings = {
+            # The [Settings] group
+            Settings = {
+                RoamThreshold = -80;
+                RoamThreshold5G = -80;
+            };
+        };
+    };
+
     boot = {
         consoleLogLevel = 3;
         initrd.verbose = false;
@@ -73,6 +83,7 @@ pkgs,
             pwvucontrol
             discord
             aria2
+            zathura
             impala
             lua-language-server
             obsidian
