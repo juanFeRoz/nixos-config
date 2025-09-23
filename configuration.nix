@@ -33,16 +33,6 @@ pkgs,
 
     networking.wireless.iwd.enable = true;
 
-    networking.wireless.iwd = {
-        settings = {
-            # The [Settings] group
-            Settings = {
-                RoamThreshold = -80;
-                RoamThreshold5G = -80;
-            };
-        };
-    };
-
     boot = {
         consoleLogLevel = 3;
         initrd.verbose = false;
@@ -52,7 +42,6 @@ pkgs,
             "boot.shell_on_fail"
             "udev.log_priority=3"
             "rd.systemd.show_status=auto"
-            "bt_coex=0"
         ];
     };
 
