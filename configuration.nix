@@ -89,6 +89,8 @@ pkgs,
         ];
     };
 
+    users.defaultUserShell = pkgs.zsh;
+
     users.users.juanfe = {
         isNormalUser = true;
         extraGroups = ["wheel" "docker"];
@@ -126,7 +128,6 @@ pkgs,
             kitty
             direnv
         ];
-        shell = pkgs.zsh;
     };
 
     nixpkgs.config.allowUnfree = true;
