@@ -70,23 +70,6 @@ pkgs,
 
     programs.zsh = {
         enable = true;
-        ohMyZsh = {
-            enable = true;
-            plugins = [
-                "git"
-                "z"
-            ];
-            theme = "robbyrussell";
-        };
-        enableCompletion = true;
-        autosuggestions.enable = true;
-        syntaxHighlighting.enable = true;
-
-        histSize = 10000;
-        histFile = "$HOME/.zsh_history";
-        setOptions = [
-            "HIST_IGNORE_ALL_DUPS"
-        ];
     };
 
     users.defaultUserShell = pkgs.zsh;
