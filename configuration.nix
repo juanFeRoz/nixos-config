@@ -35,7 +35,6 @@ pkgs,
 
     networking.wireless.iwd = {
         settings = {
-            # The [Settings] group
             Settings = {
                 RoamThreshold = -80;
                 RoamThreshold5G = -80;
@@ -160,7 +159,7 @@ pkgs,
         enable = true;
         settings = {
             default_session = {
-                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+                command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
             };
         };
     };
